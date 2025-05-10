@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Learning Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Platform Logo">
+                </a>
+        </div>
+        <div class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="nav-links-container">
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="learning_space.html">Learning Space</a></li>
+                    <li><a href="organiser.html">Study Organiser</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li class="auth-mobile"><a href="login.html">Login/Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="auth-links"> <a href="login.html">Login/Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Unlock Your CSE Potential</h1>
+                <p>Interactive courses, personalized learning paths, and a supportive community. Start your journey today!</p>
+                <a href="courses.html" class="btn btn-primary-hero">Explore Courses <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Learn With Us?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-laptop-code feature-icon"></i>
+                    <h3>Expert-Led Courses</h3>
+                    <p>Master complex topics with courses designed and taught by industry professionals.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-puzzle-piece feature-icon"></i>
+                    <h3>Interactive Learning</h3>
+                    <p>Engage with hands-on coding exercises, quizzes, and real-world projects.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calendar-alt feature-icon"></i>
+                    <h3>Flexible Study</h3>
+                    <p>Learn at your own pace with our Personal Study Organiser and track your progress.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Supportive Community</h3>
+                    <p>Connect with peers, ask questions, and collaborate in our forums.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-highlights">
+            <h2>Popular Courses</h2>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <img src="images/course-placeholder1.jpg" alt="Data Structures"> <div class="highlight-info">
+                        <h3>Data Structures & Algorithms</h3>
+                        <p>The backbone of efficient software. Master essential concepts.</p>
+                        <a href="courses.html#dsa" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/course-placeholder2.jpg" alt="Web Development"> <div class="highlight-info">
+                        <h3>Full-Stack Web Development</h3>
+                        <p>Build dynamic web applications from front-end to back-end.</p>
+                        <a href="courses.html#webdev" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/course-placeholder3.jpg" alt="Machine Learning"> <div class="highlight-info">
+                        <h3>Intro to Machine Learning</h3>
+                        <p>Dive into the world of AI and learn to build intelligent systems.</p>
+                        <a href="courses.html#ml" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback-form-section">
+            <div class="feedback-form">
+                <h3>We Value Your Feedback!</h3>
+                <form action="#" method="POST">
+                    <label for="feedback-email">Your Email (Optional):</label>
+                    <input type="email" id="feedback-email" name="email">
+
+                    <label for="feedback-type">Feedback Type:</label>
+                    <select id="feedback-type" name="feedback_type">
+                        <option value="general">General Comment</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="suggestion">Feature Suggestion</option>
+                        <option value="course_request">Course Request</option>
+                    </select>
+
+                    <label for="feedback-message">Your Message:</label>
+                    <textarea id="feedback-message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="btn">Send Feedback</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; <span id="currentYear">2024</span> LearnHub. All Rights Reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
