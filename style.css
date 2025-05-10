@@ -1,0 +1,237 @@
+/* css/style.css (Homepage) */
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(25, 86, 148, 0.8), rgba(16, 53, 96, 0.9)), url('../images/hero-background.jpg') no-repeat center center/cover; /* REPLACE hero-background.jpg */
+    color: var(--surface-color);
+    text-align: center;
+    padding: 100px 20px; /* Increased padding */
+    border-radius: 12px; /* Consistent with other sections */
+    /* Removed margin-bottom, handled by main section margin */
+    position: relative;
+    overflow: hidden; /* For pseudo-elements if any */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* Deeper shadow for hero */
+}
+
+.hero::before { /* Subtle overlay pattern or effect */
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* background-image: url('path/to/subtle-pattern.png'); */
+    /* opacity: 0.1; */
+}
+
+.hero-content {
+    position: relative; /* To be above pseudo-elements */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.2em; /* Larger hero title */
+    margin-bottom: 0.5em;
+    color: var(--surface-color);
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 1.8em;
+    color: #E0E0E0; /* Slightly off-white for readability */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn.btn-primary-hero { /* Specific styling for hero button */
+    background-image: linear-gradient(135deg, var(--accent-color), #FF8F00);
+    color: var(--text-color); /* Darker text on yellow */
+    padding: 18px 35px;
+    font-size: 1.25em;
+    box-shadow: 0 5px 15px rgba(191, 101, 0, 0.4);
+}
+.btn.btn-primary-hero:hover {
+    box-shadow: 0 8px 20px rgba(191, 101, 0, 0.5);
+    background-image: linear-gradient(135deg, #FF8F00, var(--accent-color));
+}
+.btn.btn-primary-hero i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+.btn.btn-primary-hero:hover i {
+    transform: translateX(5px);
+}
+
+/* --- Features Section --- */
+.features {
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.2em;
+    margin-bottom: 50px; /* Increased margin */
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--surface-color); /* Should inherit from main section */
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 25px var(--shadow-hover-color);
+}
+
+.feature-icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Makes the gradient visible */
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.1));
+}
+
+.feature-item h3 {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: var(--text-color-light);
+}
+
+/* --- Course Highlights Section --- */
+.course-highlights h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 50px;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.highlight-card {
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px var(--shadow-color);
+    overflow: hidden; /* To contain image */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px var(--shadow-hover-color);
+}
+
+.highlight-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--secondary-color); /* Accent border for image */
+}
+
+.highlight-info {
+    padding: 20px;
+    flex-grow: 1; /* Allows button to be at bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight-info h3 {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.highlight-info p {
+    font-size: 0.95em;
+    color: var(--text-color-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.highlight-info .btn {
+    margin-top: auto; /* Pushes button to the bottom */
+    align-self: flex-start; /* Aligns button to left */
+}
+
+
+/* --- Feedback Form Section on Homepage --- */
+.feedback-form-section {
+    /* Uses global .feedback-form styling */
+}
+.feedback-form button.btn { /* Ensure feedback button uses global btn style */
+    width: auto; /* Override form button width if needed */
+    align-self: center; /* Center button if form is flex */
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+    .btn.btn-primary-hero {
+        padding: 15px 25px;
+        font-size: 1.1em;
+    }
+    .features h2, .course-highlights h2 {
+        font-size: 1.9em;
+        margin-bottom: 30px;
+    }
+    .feature-grid, .highlight-grid {
+        grid-template-columns: 1fr; /* Stack items */
+        gap: 25px;
+    }
+}
+
+/* Mobile menu specific Auth Link styling if needed for index.html */
+@media (max-width: 768px) {
+    .auth-links { /* Hide desktop auth links */
+        display: none;
+    }
+    .auth-mobile { /* Show mobile auth link in hamburger */
+        display: block !important; /* Ensure it's visible if previously hidden by other rules */
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+    .auth-mobile a {
+        color: var(--accent-color) !important; /* Make it stand out */
+        font-weight: bold;
+    }
+}
+@media (min-width: 769px) {
+    .auth-mobile { /* Hide mobile auth link on desktop */
+        display: none !important;
+    }
+}

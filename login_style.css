@@ -1,0 +1,253 @@
+/* css/login_style.css */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* Adjust based on header/footer height */
+    padding: 40px 20px;
+}
+
+.auth-container {
+    background-color: var(--surface-color);
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    width: 100%;
+    max-width: 480px;
+    transform: perspective(1000px) rotateX(0deg); /* Initial state for potential 3D hover */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+/*
+.auth-container:hover {
+    transform: perspective(1000px) rotateX(5deg) translateY(-10px);
+    box-shadow: 0 15px 35px var(--shadow-hover-color);
+}
+*/
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-link {
+    flex: 1;
+    padding: 15px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--text-color-light);
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tab-link i {
+    margin-right: 8px;
+}
+
+.tab-link.active {
+    color: var(--primary-color);
+    font-weight: bold;
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-link:hover:not(.active) {
+    color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.9em;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.95em;
+    color: var(--text-color-light);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+.form-group label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+    width: 16px; /* Align icons */
+    text-align: center;
+}
+
+/* Input fields inherit from global.css, can add specifics here */
+.auth-container form input[type="text"],
+.auth-container form input[type="email"],
+.auth-container form input[type="password"] {
+    padding: 14px 12px; /* Slightly larger padding */
+    font-size: 1em;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+.checkbox-label {
+    font-weight: normal;
+    color: var(--text-color-light);
+    cursor: pointer;
+    display: flex; /* Align checkbox and text */
+    align-items: center;
+}
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    top: -1px; /* Align better with text */
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.checkbox-label input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: '\f00c'; /* Font Awesome check icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.forgot-password:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.btn.btn-full {
+    width: 100%;
+    padding: 15px; /* Larger button padding */
+    font-size: 1.1em;
+}
+
+.terms-group {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.terms-group label a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.terms-group label a:hover {
+    text-decoration: underline;
+}
+
+.social-login-text {
+    text-align: center;
+    margin: 25px 0 15px;
+    color: var(--text-color-light);
+    font-size: 0.9em;
+    position: relative;
+}
+.social-login-text::before,
+.social-login-text::after {
+    content: '';
+    display: block;
+    width: 35%;
+    height: 1px;
+    background-color: var(--border-color);
+    position: absolute;
+    top: 50%;
+}
+.social-login-text::before { left: 0; }
+.social-login-text::after { right: 0; }
+
+
+.social-login-buttons {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center buttons if they don't fill width */
+}
+
+.social-btn {
+    flex-grow: 1; /* Make buttons share space equally */
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-hover-color);
+}
+.social-btn i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.social-btn.google i { color: #DB4437; }
+.social-btn.github i { color: #333; }
+
+.social-btn.google:hover { background-color: #f1f1f1; }
+.social-btn.github:hover { background-color: #f1f1f1; }
+
+
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 25px 20px;
+        margin: 15px;
+    }
+    .tab-link {
+        font-size: 1em;
+        padding: 12px 5px;
+    }
+    .auth-container h2 {
+        font-size: 1.6em;
+    }
+    .social-login-buttons {
+        flex-direction: column; /* Stack social buttons on very small screens */
+    }
+}

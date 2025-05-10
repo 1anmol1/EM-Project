@@ -1,0 +1,474 @@
+/* css/global.css */
+:root {
+    --primary-color: #2979FF; /* Engaging Blue */
+    --secondary-color: #00BFA5; /* Vibrant Teal/Green for accents */
+    --accent-color: #FFC107; /* Warm Yellow for attention */
+    --background-color: #F0F2F5; /* Light, clean background */
+    --surface-color: #FFFFFF; /* For cards, modals */
+    --text-color: #263238; /* Dark, readable text */
+    --text-color-light: #546E7A;
+    --border-color: #CFD8DC;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-hover-color: rgba(0, 0, 0, 0.2);
+    --font-main: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    --font-headings: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+    background: linear-gradient(135deg, var(--primary-color), #1A237E); /* Deep blue gradient */
+    color: var(--surface-color);
+    /* MODIFIED: Reduced vertical padding to make header less tall */
+    padding: 0.75em 2em; /* Example: 0.75em top/bottom, 2em left/right. Adjust as needed. */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--accent-color); /* Accent border */
+}
+
+header .logo a {
+    color: var(--surface-color);
+    text-decoration: none;
+    font-size: 1.7em; /* You can adjust this if your logo text like "ZERO1" is part of this 'a' tag and not just the image */
+    font-weight: bold;
+    font-family: var(--font-headings);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+header .logo a:hover {
+    transform: scale(1.05);
+}
+
+header .logo img {
+    height: 45px; /* Or your desired fixed logo image height. e.g. 50px, 60px */
+                  /* The header padding above will make the header fit this height + padding */
+    margin-right: 12px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+/* --- Hamburger Menu --- */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--surface-color);
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- Navigation Links (Desktop and Mobile Menu) --- */
+.nav-links-container {
+    display: flex;
+    align-items: center;
+}
+
+nav.nav-links {
+    display: flex;
+}
+
+nav.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav.nav-links ul li {
+    margin-left: 15px;
+}
+
+nav.nav-links ul li a {
+    color: var(--surface-color);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.6em 1.2em;
+    border-radius: 20px; /* Pill shape */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+nav.nav-links ul li a:hover,
+nav.nav-links ul li a.active {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.auth-links {
+    margin-left: 25px;
+}
+
+.auth-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.6em 1.2em;
+    border: 2px solid var(--accent-color);
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- Main Content --- */
+main {
+    flex: 1;
+    padding: 2em;
+    max-width: 1200px;
+    width: 90%;
+    margin: 30px auto;
+    background-color: transparent;
+}
+
+main section {
+    background-color: var(--surface-color);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: var(--primary-color);
+    margin-top: 0;
+}
+h1 { font-size: 2.5em; margin-bottom: 0.7em; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+h2 { font-size: 2em; margin-bottom: 0.6em; color: var(--secondary-color);}
+h3 { font-size: 1.6em; margin-bottom: 0.5em; }
+
+/* --- Footer --- */
+footer {
+    background: linear-gradient(135deg, #263238, #11191C);
+    color: #B0BEC5;
+    text-align: center;
+    padding: 2em 1em;
+    margin-top: auto;
+    border-top: 3px solid var(--secondary-color);
+    box-shadow: 0 -4px 12px var(--shadow-color);
+}
+
+footer p {
+    margin: 0.5em 0;
+    font-size: 0.95em;
+}
+
+footer .footer-links {
+    margin-bottom: 1em;
+}
+
+footer .footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: var(--surface-color);
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+footer .social-media a {
+    color: #B0BEC5;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* --- Common Button Styles --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--surface-color);
+    background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-image 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 59, 125, 0.3);
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 59, 125, 0.4);
+    background-image: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+.btn:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 59, 125, 0.2);
+}
+
+.btn-secondary {
+    background-image: linear-gradient(135deg, var(--accent-color), #FF8F00);
+    box-shadow: 0 4px 10px rgba(191, 101, 0, 0.3);
+}
+.btn-secondary:hover {
+    box-shadow: 0 6px 15px rgba(191, 101, 0, 0.4);
+    background-image: linear-gradient(135deg, #FF8F00, var(--accent-color));
+}
+.btn-secondary:active {
+    box-shadow: 0 2px 5px rgba(191, 101, 0, 0.2);
+}
+
+
+/* --- Form Elements (Basic Styling) --- */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="search"],
+form input[type="tel"],
+form input[type="url"],
+form input[type="date"],
+form input[type="number"],
+form textarea,
+form select {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #F8F9FA;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="search"]:focus,
+form input[type="tel"]:focus,
+form input[type="url"]:focus,
+form input[type="date"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.06), 0 0 0 3px rgba(41, 121, 255, 0.2);
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button[type="submit"],
+input[type="submit"] {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--surface-color);
+    background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 59, 125, 0.3);
+}
+
+form button[type="submit"]:hover,
+input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 59, 125, 0.4);
+}
+form button[type="submit"]:active,
+input[type="submit"]:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 5px rgba(0, 59, 125, 0.2);
+}
+
+/* --- Feedback Form (Global styling if any part is common) --- */
+.feedback-form {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #e3f2fd;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.feedback-form h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) { /* Tablet and below */
+    header {
+        padding: 0.7em 1.5em; /* Adjusted tablet padding slightly if needed, can match desktop's 0.75em or be different */
+    }
+    header .logo a {
+        font-size: 1.5em;
+    }
+    header .logo img {
+        height: 40px; /* Adjust if your tablet logo size is different */
+    }
+    .nav-links-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* MODIFIED: Reduced vertical padding for mobile header */
+        padding: 0.6em 1em; /* Example: 0.6em top/bottom. Adjust as needed. */
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav.nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #223A5E;
+        width: 100%;
+        padding: 1em 0;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        z-index: 999;
+        border-top: 2px solid var(--accent-color);
+    }
+
+    nav.nav-links.active {
+        display: flex;
+    }
+
+    nav.nav-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.nav-links ul li {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav.nav-links ul li a {
+        padding: 0.8em 1em;
+        display: block;
+        width: 80%;
+        margin: 5px auto;
+    }
+    nav.nav-links ul li a:hover,
+    nav.nav-links ul li a.active {
+        background-color: var(--accent-color);
+        color: var(--text-color);
+    }
+
+    .auth-links {
+        display: none;
+        /* For mobile, Login/Signup is often part of the nav.nav-links ul.
+           You'd add an <li> for it in your HTML for mobile view,
+           and potentially hide the desktop .auth-links */
+    }
+    /* Style for mobile auth links if you add them to the nav menu: */
+    .nav-links .mobile-auth { /* Add this class to the li wrapping login/signup in mobile nav */
+        display: block; /* Or inline-block if preferred */
+        margin-top: 10px;
+    }
+    .nav-links .mobile-auth a {
+        display: inline-block;
+        padding: 0.6em 1.2em;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        border-radius: 20px;
+    }
+    .nav-links .mobile-auth a:hover {
+        background-color: var(--accent-color);
+        color: var(--text-color);
+    }
+
+
+    main {
+        padding: 1em;
+        width: 95%;
+        margin: 20px auto;
+    }
+    main section {
+        padding: 20px;
+    }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.7em; }
+    h3 { font-size: 1.4em; }
+
+    footer .footer-links, footer .social-media {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .footer-links a, footer .social-media a {
+        margin-bottom: 10px;
+    }
+}
